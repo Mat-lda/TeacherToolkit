@@ -21,18 +21,26 @@ namespace TeacherToolkit
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            countdown -= timer2.Interval;
-            if (textBox2.Text == "")
+            int parsedValue = 0;
+            if (!int.TryParse(textBox2.Text, out parsedValue))
             {
+                
                 timer2.Enabled = false;
-                MessageBox.Show("Please enter a number", "Error");
-
             }
             else
             {
-                try
+                Random rnd = new Random();
+                countdown -= timer2.Interval;
+
+                if (textBox2.Text == "")
                 {
+                    timer2.Enabled = false;
+                    MessageBox.Show("Please enter a number", "Error");
+
+                }
+                else
+                {
+
                     label2.Text = rnd.Next(1, (Int32.Parse(textBox2.Text) + 1)).ToString();
                     if (countdown < 0)
                     {
@@ -41,13 +49,8 @@ namespace TeacherToolkit
                         timer2.Enabled = false;
                     }
                 }
-                catch
-                {
-                    MessageBox.Show("Please enter a number", "Error");
-                }
-
-
             }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,6 +65,11 @@ namespace TeacherToolkit
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
         {
 
         }
