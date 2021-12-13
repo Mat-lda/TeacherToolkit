@@ -91,6 +91,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.listBox1);
             this.Name = "Form6";
+            this.ShowIcon = false;
             this.Text = "Seating Plan";
             this.Load += new System.EventHandler(this.Form6_Load);
             this.ResumeLayout(false);

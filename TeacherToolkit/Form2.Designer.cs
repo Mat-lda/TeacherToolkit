@@ -84,6 +84,7 @@
             this.MaximumSize = new System.Drawing.Size(301, 371);
             this.MinimizeBox = false;
             this.Name = "Form2";
+            this.ShowIcon = false;
             this.Text = "Timer";
             this.ResumeLayout(false);
             this.PerformLayout();
